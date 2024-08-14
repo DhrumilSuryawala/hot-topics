@@ -1,0 +1,283 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+/* Colors (Futuristic Theme) */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: #0D0D0D;
+    color: #E0E0E0;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1F1F1F;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #4A90E2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    height: 90px; /* Adjusted height */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+    animation: spin 10s linear infinite; /* Added animation */
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4A90E2;
+    font-weight: bold;
+    position: relative;
+    font-size: 0.875rem;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #E94E77;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.masthead {
+    background-size: cover;
+    color: #E0E0E0;
+    padding: 0.5rem;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+    background-position: center;
+    font-size: 1.25rem;
+    height: 100px; /* Adjusted height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.masthead h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Main Styles */
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #1F1F1F;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Article Styles */
+article {
+    margin-bottom: 2rem;
+}
+
+article h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+article figure {
+    margin: 0;
+}
+
+article figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+article figcaption {
+    color: #FF0055;
+    font-weight: bold;
+    background-color: #1E1E1E;
+    padding: 0.5rem;
+}
+
+/* Grid Layout for Card Container */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+}
+
+/* Card Styles */
+.card {
+    background-color: #1E1E1E;
+    border: 1px solid #00FFCC;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 255, 204, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card figure img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.card figcaption {
+    color: #FF0055;
+    font-weight: bold;
+    padding: 0.5rem;
+    background-color: #1E1E1E;
+    border-bottom: 1px solid #00FFCC;
+}
+
+.card p {
+    padding: 1rem;
+    color: #E0E0E0;
+    line-height: 1.5;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #4A90E2;
+}
+
+footer .social-media a {
+    margin: 0 1rem;
+    color: #4A90E2;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer .social-media a:hover {
+    color: #E94E77;
+}
+
+/* Responsive Design */
+@media (max-width: 35rem) {
+    body {
+        font-size: 0.875rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    article {
+        text-align: center;
+    }
+}
+
+@media (min-width: 35rem) and (max-width: 80rem) {
+    body {
+        font-size: 1rem;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    article {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    article figure {
+        flex: 1;
+        margin-right: 1rem;
+    }
+
+    article p {
+        flex: 2;
+    }
+}
+
+@media (min-width: 80rem) {
+    body {
+        font-size: 1.25rem;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    article {
+        display: flex;
+        align-items: center;
+    }
+
+    article figure {
+        flex: 1;
+        margin-right: 1rem;
+    }
+
+    article p {
+        flex: 2;
+    }
+}
+
+/* Animations */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
